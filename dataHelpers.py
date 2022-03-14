@@ -3,14 +3,14 @@ from sklearn.preprocessing import MinMaxScaler
 import torch
 def batch_format(dataset, T_in_seq, T_out_seq, time_major=True):
     """
-        Format the dataset into the form [T_in_seq+T_out_seq, n_samples, n_dims] from the form [T, n_dims]
-        :param dataset: The dataset in the form  [T, n_dims]
-        :param T_in_seq: Model input sequence length
-        :param T_out_seq: Model output sequence length
-        :param time_major: True if the results are sent in the form [T_in_seq+T_out_seq, n_samples, n_inputs].
-        :return: inputs: The inputs in the form [T_in_seq+T_out_seq, n_samples, n_dims]
-        :return: outputs: The inputs in the form [T_in_seq+T_out_seq, n_samples, n_dims]
-        """
+    Format the dataset into the form [T_in_seq+T_out_seq, n_samples, n_dims] from the form [T, n_dims]
+    :param dataset: The dataset in the form  [T, n_dims]
+    :param T_in_seq: Model input sequence length
+    :param T_out_seq: Model output sequence length
+    :param time_major: True if the results are sent in the form [T_in_seq+T_out_seq, n_samples, n_inputs].
+    :return: inputs: The inputs in the form [T_in_seq+T_out_seq, n_samples, n_dims]
+    :return: outputs: The inputs in the form [T_in_seq+T_out_seq, n_samples, n_dims]
+    """
     T, n_dims = dataset.shape
     inputs = []
     targets = []
@@ -31,15 +31,15 @@ def batch_format(dataset, T_in_seq, T_out_seq, time_major=True):
 
 def generate_data(data,period):
     """
-        Generate a dataset，returns a training, test, and validation dataset
-        :param data: all data
-        :param period: The period of the time-series seasonal component
-        :return train_data: the dataset for training the model
-        :return test_data: the dataset for testing the model
-        :return valid_data: the dataset for validating the model.
-        :return period: The period of the fundamental seasonal component of the time series.
-        :return mm: Data Normalization
-        """
+    Generate a dataset，returns a training, test, and validation dataset
+    :param data: all data
+    :param period: The period of the time-series seasonal component
+    :return train_data: the dataset for training the model
+    :return test_data: the dataset for testing the model
+    :return valid_data: the dataset for validating the model.
+    :return period: The period of the fundamental seasonal component of the time series.
+    :return mm: Data Normalization
+    """
 
     T_in_seq = 2 * period
     T_out_seq = period
