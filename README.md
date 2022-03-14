@@ -15,22 +15,22 @@ self-attention.
 
 ## Files
 
-
-- SATVNN.py: Contains the main class for SATVNN (Self-Attention based Time-Variant Neural Networks).
+- Encoder.py: Encoder is made up of self-attention layer (Gaussian or Laplace or Cauchy), feed forward and Add & Norm.
+- SATVN.py: Contains the main class for SATVNN (Self-Attention based Time-Variant Neural Networks).
+- SATVNN.py: Contains functions to build the TensorFlow graph for SATVNN
+- Self_attention_block.py: Contains self-attention block described in paper.
 - calculateError.py: Contains helper functions to compute error metrics
 - dataHelpers.py: Functions to generate the dataset use in demo.py and for for formatting data.
-- demo.py: Trains and evaluates SATVNN on Water_usage dataset.
-- Encoder.py: Encoder is made up of self-attention layer (Gaussian or Laplace or Cauchy), feed forward and Add & Norm.
-- evaluate.py: Contains a rudimentary training function to train SATVNN.
+- demo.py: Trains and evaluates SATVNN on Pphil dataset.
+- evaluate.py: Contains a rudimentary training function to evaluate SATVNN.
 - mse_loss.py: Calculates the mean squared error loss
-- optimizer.py: Implements Open AI version of Adam algorithm with weight decay fix.
 - train.py: Contains a rudimentary training function to train SATVNN.
-- Self_attention_block.py: Contains self-attention block described in paper.
+
 
 
 ## Usage
 
-Run the demo.py script to train and evaluate SATVNN model on Water_usage dataset. 
+Run the demo.py script to train and evaluate SATVNN model on Pphil dataset. 
 
 ## Requirements
 
