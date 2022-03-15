@@ -13,6 +13,11 @@ among which a novel Cauchy self-attention mechanism achieves better results than
 self-attention.
 3. It is shown to out-perform state of the art deep learning models and statistical models.
 
+
+## Data
+All the data in the paper can be found here https://robjhyndman.com/tsdl/
+
+
 ## Files
 
 - Encoder.py: Encoder is made up of self-attention layer (Gaussian or Laplace or Cauchy), feed forward and Add & Norm.
